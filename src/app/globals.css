@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  
+  /* Tema A Ordem dos Quatro - Nova Paleta */
+  
+  /* Brand (Cores da marca) */
+  --brand-ouro-500: #D4AF37;
+  --brand-ouro-600: #B6892F;
+  --brand-ouro-700: #8E6D24;
+  
+  /* Surface (Superfícies / fundos) */
+  --surface-900: #121212;
+  --surface-800: #1A1A1A;
+  --surface-700: #232323;
+  
+  /* Text (Textos) */
+  --text-primary: #F2F2F2;
+  --text-secondary: #CFCFCF;
+  --text-muted: #9E9E9E;
+  --text-inverse: #1A1A1A;
+  
+  /* Border (Bordas) */
+  --border-default: #3A3A3A;
+  
+  /* State (Estados) */
+  --state-focus: #D4AF37;
+  --state-error: #E43D3D;
+  
+  /* Background (Fundos especiais) */
+  --bg-radial: #0E0D0B;
+  --bg-gradient: #1A1A1A;
+  
+  /* Fontes */
+  --font-cinzel: var(--font-cinzel);
+  --font-cinzel-decorative: var(--font-cinzel-decorative);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Classes de Cores */
+.brand-ouro-500 { color: var(--brand-ouro-500); }
+.brand-ouro-600 { color: var(--brand-ouro-600); }
+.brand-ouro-700 { color: var(--brand-ouro-700); }
+.bg-brand-ouro-500 { background-color: var(--brand-ouro-500); }
+.bg-brand-ouro-600 { background-color: var(--brand-ouro-600); }
+.bg-brand-ouro-700 { background-color: var(--brand-ouro-700); }
+
+.bg-surface-900 { background-color: var(--surface-900); }
+.bg-surface-800 { background-color: var(--surface-800); }
+.bg-surface-700 { background-color: var(--surface-700); }
+
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+.text-inverse { color: var(--text-inverse); }
+
+.border-default { border-color: var(--border-default); }
+.border-focus:focus { border-color: var(--state-focus); }
+.border-error { border-color: var(--state-error); }
+
+.bg-radial { background-color: var(--bg-radial); }
+.bg-gradient { background-color: var(--bg-gradient); }
+
+/* Classes de Tipografia */
+.display-l {
+  font-family: var(--font-cinzel-decorative);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.title-m {
+  font-family: var(--font-cinzel-decorative);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.3;
+  letter-spacing: 0.015em;
+}
+
+.body-m {
+  font-family: var(--font-cinzel);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.body-s {
+  font-family: var(--font-cinzel);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.label-s {
+  font-family: var(--font-cinzel);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.button-m {
+  font-family: var(--font-cinzel);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Hover States para cores */
+.hover-brand-ouro-600:hover { color: var(--brand-ouro-600); }
+.hover-bg-brand-ouro-600:hover { background-color: var(--brand-ouro-600); }
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
