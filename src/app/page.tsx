@@ -31,16 +31,16 @@ export default function Home() {
 
           <div className="flex gap-4 items-center flex-col sm:flex-row">
             <Link
-              href="/login"
+              href="/auth"
               className="rounded-md border border-solid border-transparent transition-colors flex items-center justify-center bg-brand-ouro-500 text-inverse gap-2 hover-bg-brand-ouro-600 h-10 sm:h-12 px-4 sm:px-5 sm:w-auto button-m"
             >
-              FAZER LOGIN
+              ENTRAR / CADASTRAR
             </Link>
             <Link
-              href="/criar-ficha"
+              href="/dashboard"
               className="rounded-md border border-solid border-brand-ouro-500 brand-ouro-500 transition-colors flex items-center justify-center hover:bg-brand-ouro-500 hover:text-inverse hover:border-transparent h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto button-m"
             >
-              CRIAR PERSONAGEM
+              DASHBOARD
             </Link>
           </div>
         </main>

@@ -1,44 +1,44 @@
-const OrdemLogo = ({ className = "" }: { className?: string }) => {
+import Image from 'next/image';
+
+type OrdemLogoProps = {
+  className?: string;
+  /**
+   * Variante do logo
+   * - "full": usa O4NBG.png (símbolo + escrita)
+   * - "icon": usa O4NBG1.png (apenas símbolo)
+   */
+  variant?: 'full' | 'icon';
+  /** Largura desejada em pixels. Altura é ajustada automaticamente mantendo proporção */
+  width?: number;
+  /** Alt text acessível */
+  alt?: string;
+  /** Priorizar carregamento em páginas acima da dobra */
+  priority?: boolean;
+};
+
+const OrdemLogo = ({
+  className = '',
+  variant = 'full',
+  width = 240,
+  alt = 'A ORDEM DOS QUATRO',
+  priority = false,
+}: OrdemLogoProps) => {
+  const src = variant === 'icon' ? '/images/O4NBG1.png' : '/images/O4NBG.png';
+
+  // Estimar aspect ratio (ajuste se necessário de acordo com o arquivo real)
+  // Supondo ~ 3:2 para full e 1:1 para icon
+  const aspectRatio = variant === 'icon' ? 1 : 3 / 2;
+  const height = Math.round(width / aspectRatio);
+
   return (
-    <div className={`flex flex-col items-center text-center ${className}`}>
-      {/* Símbolo da Cruz */}
-      <div className="relative mb-4">
-        <svg
-          width="60"
-          height="60"
-          viewBox="0 0 60 60"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="brand-ouro-500"
-        >
-          {/* Cruz principal */}
-          <path
-            d="M30 5 L30 55 M5 30 L55 30"
-            stroke="currentColor"
-            strokeWidth="3"
-            strokeLinecap="round"
-          />
-          {/* Decorações nos cantos */}
-          <circle cx="30" cy="30" r="8" fill="none" stroke="currentColor" strokeWidth="2" />
-          <circle cx="30" cy="12" r="3" fill="currentColor" />
-          <circle cx="30" cy="48" r="3" fill="currentColor" />
-          <circle cx="12" cy="30" r="3" fill="currentColor" />
-          <circle cx="48" cy="30" r="3" fill="currentColor" />
-          {/* Diamantes nos cantos externos */}
-          <path d="M30 2 L32 5 L30 8 L28 5 Z" fill="currentColor" />
-          <path d="M30 52 L32 55 L30 58 L28 55 Z" fill="currentColor" />
-          <path d="M2 30 L5 28 L8 30 L5 32 Z" fill="currentColor" />
-          <path d="M52 30 L55 28 L58 30 L55 32 Z" fill="currentColor" />
-        </svg>
-      </div>
-      
-      {/* Texto do Logo */}
-      <div className="brand-ouro-500">
-        <div className="body-s mb-1">A</div>
-        <div className="title-m">ORDEM</div>
-        <div className="label-s text-muted mb-1">DOS</div>
-        <div className="title-m">QUATRO</div>
-      </div>
+    <div className={`inline-flex items-center justify-center ${className}`}>
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        priority={priority}
+      />
     </div>
   );
 };

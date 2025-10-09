@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Cinzel, Cinzel_Decorative } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
 
 const cinzel = Cinzel({
   variable: "--font-cinzel",

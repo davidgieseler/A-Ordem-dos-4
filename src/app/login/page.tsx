@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import OrdemLogo from '@/components/OrdemLogo';
+import OrdemLogo from '../../components/OrdemLogo';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
